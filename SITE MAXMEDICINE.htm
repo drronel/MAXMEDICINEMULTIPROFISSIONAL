@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.8.2.2 (Windows)"/>
+	<meta name="created" content="2025-11-22T11:33:20.966574300"/>
+	<meta name="changed" content="2025-11-22T13:29:44.728274200"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+	</style>
+</head>
+<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><p style="margin-bottom: 0cm; line-height: 100%">
+🚀 GUIA COMPLETO DE DEPLOYMENT - COLOCANDO SEU SITE NO AR</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Um guia prático e
+estruturado para publicar sua aplicação web com segurança,
+performance e qualidade. Vou cobrir cada etapa do processo de forma
+clara e acionável.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">📋 SEÇÃO 1:
+PREPARAÇÃO DA PÁGINA PARA PUBLICAÇÃO</p>
+<p style="margin-bottom: 0cm; line-height: 100%">1.1 Auditoria
+Técnica Pré-Publicação</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Antes de enviar
+qualquer arquivo para o servidor, execute uma verificação completa:</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Validação de
+Código</p>
+<p style="margin-bottom: 0cm; line-height: 100%">1. **Validar HTML**
+→ Acesse: https://validator.w3.org/ → Faça upload do seu arquivo
+HTML → Corrija erros críticos (tags não fechadas, atributos
+inválidos) → Avisos podem ser ignorados, mas erros devem ser
+corrigidos 2. **Validar CSS** → Acesse:
+https://jigsaw.w3.org/css-validator/ → Insira seu arquivo CSS ou
+URL → Corrija erros de sintaxe CSS 3. **Validar JavaScript** →
+Use ESLint: npm install -g eslint → Configure arquivo
+.eslintrc.json → Execute: eslint seu-arquivo.js → Corrija
+problemas de sintaxe e lógica</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Testes Funcionais</p>
+<p style="margin-bottom: 0cm; line-height: 100%">✓ Todos os links
+funcionam (teste manualmente ou use ferramentas) ✓ Formulários
+enviam dados corretamente ✓ Botões respondem ao clique ✓ Imagens
+carregam sem problemas ✓ Vídeos reproduzem (se houver) ✓
+WhatsApp link abre a conversa corretamente ✓ Telefone link faz
+chamada (em dispositivos móveis) ✓ Redirecionamentos funcionam ✓
+Efeitos hover e animações funcionam ✓ Sessões de usuário
+mantêm-se (se aplicável)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Teste de
+Responsividade</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Teste em múltiplos
+dispositivos: Chrome DevTools: 1. Abra seu site no Chrome 2.
+Pressione F12 (ou Cmd+Option+I no Mac) 3. Clique no ícone de
+dispositivo (canto superior esquerdo) 4. Teste nos tamanhos: •
+Desktop (1920x1080) • Tablet (768x1024) • Mobile (375x667) •
+Mobile grande (480x853) Verificação de elementos: ✓ Texto legível
+em todos os tamanhos ✓ Imagens não cortam ou distorcem ✓ Botões
+têm tamanho clicável (mínimo 44x44px) ✓ Menu se adapta
+(hambúrguer no mobile) ✓ Sem scroll horizontal indesejado ✓
+Espaçamento adequado em todas as resoluções</p>
+<p style="margin-bottom: 0cm; line-height: 100%">1.2 Otimização de
+Performance</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Compressão de
+Imagens</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Ferramenta
+recomendada: TinyPNG (https://tinypng.com) Processo: 1. Acesse
+https://tinypng.com 2. Arraste suas imagens para a área de upload 3.
+Selecione formato (PNG para transparência, JPG para fotos) 4. Baixe
+imagens comprimidas 5. Substitua imagens originais pelas comprimidas
+Resultados esperados: • Redução de 50-80% no tamanho de arquivo •
+Qualidade visual praticamente imperceptível • Carregamento muito
+mais rápido Alternativas (para instalação local): → ImageMagick:
+convert imagem.jpg -quality 85 imagem-otimizada.jpg → FFmpeg:
+ffmpeg -i imagem.png -q:v 5 imagem-otimizada.jpg</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Minificação de
+Código</p>
+<p style="margin-bottom: 0cm; line-height: 100%">CSS Minificado: 1.
+Acesse: https://cssminifier.com/ 2. Cole seu código CSS 3. Copie o
+resultado minificado 4. Substitua seu arquivo CSS original JavaScript
+Minificado: 1. Acesse: https://www.minifier.org/ 2. Cole seu código
+JavaScript 3. Copie o resultado minificado 4. Substitua seu arquivo
+.js original Ou usar ferramentas CLI: → npm install -g terser (para
+JS) → npm install -g clean-css-cli (para CSS) Ganho de performance:
+• Redução de 30-50% no tamanho dos arquivos • Tempo de
+carregamento 20-40% mais rápido</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Teste de Velocidade</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Ferramenta: Google
+PageSpeed Insights Processo: 1. Acesse:
+https://pagespeedinsights.web.dev/ 2. Digite sua URL (após publicar)
+3. Analise os resultados Métricas importantes: • LCP (Largest
+Contentful Paint) - Deve ser &lt; 2.5s • FID (First Input Delay) -
+Deve ser &lt; 100ms • CLS (Cumulative Layout Shift) - Deve ser &lt;
+0.1 Se o site está lento (escore &lt; 50): → Comprimir mais
+imagens → Reduzir requisições HTTP → Usar CSS crítico inline →
+Minificar HTML, CSS, JS → Ativar cache do navegador → Usar CDN
+(Content Delivery Network)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">1.3 Conformidade
+Legal e Segurança</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Checklist de
+Conformidade</p>
+<p style="margin-bottom: 0cm; line-height: 100%">✓ Política de
+Privacidade (LGPD) - Explica coleta de dados - Define direitos do
+usuário - Detalha proteção de dados ✓ Termos de Uso -
+Responsabilidades das partes - Cancelamento/rescisão - Limitações
+de responsabilidade ✓ Aviso de Cookies (se usar cookies) - Banner
+informando uso de cookies - Opção de aceitar/rejeitar ✓
+Certificado SSL/HTTPS - Página deve usar HTTPS (não HTTP) - Ícone
+de cadeado deve aparecer na barra ✓ Acessibilidade Básica - Texto
+alternativo em imagens (alt text) - Contraste de cores adequado -
+Navegação por teclado funcional</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Preparação de
+Credenciais</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Informações
+essenciais a ter em mãos: 1. Domínio: ✓ Nome: maxmedicine.com.br
+✓ Registrador: registro.br ✓ Acesso: ACESSO ROSFR164 ✓ Senha:
+RdSF&amp;0803 2. Hospedagem: ✓ Provedor: [Será contratado] ✓
+Login: [Será fornecido] ✓ Senha: [Será fornecida] 3. Email
+profissional: ✓ Email principal: [seu-email@maxmedicine.com.br] ✓
+Senha de acesso FTP: [será definida] 4. Documentação: ✓ Ter em
+mão política de privacidade em .txt ✓ Ter em mão termos de uso
+em .txt</p>
+<p style="margin-bottom: 0cm; line-height: 100%">1.4 Estrutura de
+Arquivos Finais</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Estrutura
+recomendada para enviar para servidor: meu-site/ ├── index.html
+(página inicial) ├── css/ │ ├── style.css (estilos
+principais) │ └── responsive.css (estilos mobile) ├──
+js/ │ ├── script.js (funcionalidades) │ └──
+form-handler.js (processamento de formulário) ├── images/ │
+├── logo.png │ ├── banner.jpg │ ├──
+especialidade-1.jpg │ └── [todas as imagens] ├── pages/
+│ ├── ginecologia.html │ ├── obstetrica.html │ ├──
+geriatria.html │ ├── urgencia.html │ ├── uti.html │
+├── clinica-medica.html │ ├── ultrassom.html │ ├──
+sobre.html │ ├── contato.html │ ├──
+politica-privacidade.html │ └── termos-uso.html ├──
+robots.txt (para SEO) ├── sitemap.xml (para SEO) └──
+.htaccess (configurações do servidor)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Arquivo robots.txt</p>
+<p style="margin-bottom: 0cm; line-height: 100%">User-agent: * Allow:
+/ Disallow: /admin/ Disallow: /private/ Sitemap:
+https://maxmedicine.com.br/sitemap.xml</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Arquivo .htaccess
+(para Apache)</p>
+<p style="margin-bottom: 0cm; line-height: 100%"># Ativar HTTPS
+RewriteEngine On RewriteCond %{HTTPS} off RewriteRule ^(.*)$
+https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] # Redirecionar www para
+sem www RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC] RewriteRule ^(.*)$
+https://%1/$1 [R=301,L] # Ativar compressão GZIP &lt;IfModule
+mod_deflate.c&gt; AddOutputFilterByType DEFLATE text/html text/plain
+text/xml text/css text/javascript application/javascript &lt;/IfModule&gt;
+# Cache do navegador &lt;IfModule mod_expires.c&gt; ExpiresActive On
+ExpiresByType image/jpeg &quot;access plus 1 year&quot; ExpiresByType
+image/gif &quot;access plus 1 year&quot; ExpiresByType image/png
+&quot;access plus 1 year&quot; ExpiresByType text/css &quot;access
+plus 1 month&quot; ExpiresByType application/javascript &quot;access
+plus 1 month&quot; &lt;/IfModule&gt;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">🏢 SEÇÃO 2:
+ESCOLHA E CONFIGURAÇÃO DO SERVIÇO DE HOSPEDAGEM</p>
+<p style="margin-bottom: 0cm; line-height: 100%">2.1 Seleção do
+Provedor de Hospedagem</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Critérios de
+Escolha</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Critério	Importância	O
+Que Verificar</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Uptime	⭐⭐⭐⭐⭐	Mínimo
+99.5% (idealmente 99.9%)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Velocidade	⭐⭐⭐⭐⭐	Servidores
+rápidos, SSD (não HDD)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Suporte	⭐⭐⭐⭐	Chat
+24/7, resposta &lt; 1 hora</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Preço	⭐⭐⭐	Compatível
+com orçamento</p>
+<p style="margin-bottom: 0cm; line-height: 100%">SSL
+Grátis	⭐⭐⭐⭐	Let's Encrypt ou similar</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Backup
+Automático	⭐⭐⭐⭐	Diário, mínimo 7 dias de retenção</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Email
+Profissional	⭐⭐⭐	Contas de email incluídas</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Provedores
+Recomendados (Brasil)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">**Locaweb**
+(https://www.locaweb.com.br) ✓ Melhor para: Sites em geral,
+WordPress ✓ Plano recomendado: WordPress Gerenciado ✓ Preço: R$
+40-60/mês ✓ Vantagens: Suporte em português, servidor BR, SSL
+grátis ✓ Desvantagens: Menos flexibilidade que VPS **Hostgator
+Brasil** (https://www.hostgator.com.br) ✓ Melhor para: Iniciantes,
+sites estáticos ✓ Plano recomendado: Plano Profissional ✓ Preço:
+R$ 25-40/mês (primeira contratação) ✓ Vantagens: Muito barato,
+fácil de usar ✓ Desvantagens: Suporte por email, servidores
+compartilhados **Bluehost** (https://www.bluehost.com) ✓ Melhor
+para: WordPress (parceiro oficial) ✓ Plano recomendado: Choice Plus
+✓ Preço: $2.95-13.95/mês (USD) ✓ Vantagens: Recomendado por
+WordPress.org, SSL grátis ✓ Desvantagens: Faturamento em dólar,
+suporte em inglês **Kinsta** (https://kinsta.com) ✓ Melhor para:
+Performance máxima, WordPress premium ✓ Plano recomendado: Starter
+(se orçamento permitir) ✓ Preço: $35-60/mês (USD) ✓ Vantagens:
+Velocidade excepcional, suporte premium ✓ Desvantagens: Mais caro
+que concorrentes **SiteGround** (https://www.siteground.com) ✓
+Melhor para: Equilibrio preço/qualidade ✓ Plano recomendado:
+GrowBig ✓ Preço: $2.99-7.99/mês (USD) ✓ Vantagens: Ótimo
+suporte, staging grátis, cache otimizado ✓ Desvantagens:
+Faturamento em dólar</p>
+<p style="margin-bottom: 0cm; line-height: 100%">2.2 Processo de
+Contratação (Exemplo: Locaweb)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Passo 1: Acessar e
+Selecionar Plano</p>
+<p style="margin-bottom: 0cm; line-height: 100%">1. Acesse
+www.locaweb.com.br 2. Clique em &quot;Hospedagem&quot; →
+&quot;Hospedagem de Sites&quot; 3. Selecione &quot;WordPress
+Gerenciado&quot; 4. Escolha o plano recomendado (Start ou
+Professional) Características do plano: ✓ Espaço em disco: 20GB
+(suficiente para site médico) ✓ Tráfego: Ilimitado ✓ Contas de
+email: 5-10 ✓ Domínio: 1 incluído (transferir seu domínio) ✓
+SSL: Let's Encrypt (grátis, renovação automática) ✓ Backup
+diário: Incluído ✓ WordPress pré-instalado: Sim</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Passo 2: Transferir
+Domínio Existente</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Na página de
+contratação: 1. Clique em &quot;Já possuo um domínio&quot; 2.
+Selecione &quot;Transferir domínio existente&quot; 3. Digite:
+maxmedicine.com.br 4. Clique em &quot;Verificar disponibilidade&quot;
+5. O sistema detectará que já é registrado 6. Prossiga com a
+transferência Importante: O domínio será transferido para Locaweb
+Você receberá instruções por email para autorizar a transferência</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Passo 3: Dados de
+Acesso</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Preencha as
+informações da clínica: □ Nome da clínica: Clínica Max
+Medicina Multiprofissional □ Email de contato: seu-email@gmail.com
+(ou seu email pessoal) □ Telefone: (31) 99889-0803 □ Tipo de
+site: Clínica/Consultório □ Descrição: Clínica
+multiprofissional em medicina Receberá por email: ✓ Dados de
+acesso cPanel ✓ Dados de acesso WordPress admin ✓ Informações
+de FTP ✓ Instruções de transferência de domínio</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Passo 4: Dados de
+Pagamento</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Opções de
+pagamento: ✓ Cartão de crédito (renovação automática) -
+Cobrança mensal, sem mudança de preço - Renovação 7 dias antes
+do vencimento ✓ Boleto (anual é mais barato) - Desconto de 10-15%
+no valor anual - Boleto vence em 3 dias úteis - Deve renovar
+manualmente a cada ano ✓ PIX (acesso direto) - Instantâneo -
+Disponível 24/7 Recomendação: Cartão de crédito (praticidade)
+Primeira compra: Fazer antes de data importante (para não perder
+prazo)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">2.3 Configuração
+Inicial da Hospedagem</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Acesso ao cPanel
+(Painel de Controle)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Email recebido terá:
+- URL: https://seu-dominio.locaweb.com.br:2083 (ou IP do servidor) -
+Usuário: cpanel_user_[número] - Senha: [senha aleatória fornecida]
+Primeiro acesso: 1. Acesse a URL fornecida 2. Faça login com
+credenciais 3. Mude a senha (recomendado) 4. Você verá o cPanel
+(painel com vários ícones) Elementos principais do cPanel: ├──
+File Manager (gerenciador de arquivos) ├── FTP Accounts (contas
+FTP para upload) ├── MySQL Databases (banco de dados) ├──
+Email Accounts (contas de email) ├── SSL/TLS Status
+(certificado HTTPS) ├── Backup (fazer backups) └──
+Metrics (estatísticas de uso)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Criar Contas de
+Email Profissional</p>
+<p style="margin-bottom: 0cm; line-height: 100%">No cPanel: 1. Vá
+para &quot;Email Accounts&quot; (ou &quot;Contas de Email&quot;) 2.
+Clique em &quot;Create Account&quot; 3. Preencha: □ Email:
+contato@maxmedicine.com.br □ Password: [senha forte] □ Storage:
+100MB (padrão) 4. Clique &quot;Create&quot; Repetir para: -
+contato@maxmedicine.com.br (geral) - agendamento@maxmedicine.com.br
+(agendamentos) - Dr. (primeiro nome)@maxmedicine.com.br (opcional)
+Acessar email: → Webmail: https://seu-dominio.locaweb.com.br/mail →
+Cliente (Outlook, Thunderbird): • Servidor IMAP:
+mail.maxmedicine.com.br • Porta: 993 (SSL) • Usuário:
+seu-email@maxmedicine.com.br</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Ativar Certificado
+SSL</p>
+<p style="margin-bottom: 0cm; line-height: 100%">No cPanel: 1. Vá
+para &quot;SSL/TLS Status&quot; 2. Procure seu domínio
+(maxmedicine.com.br) 3. Clique em &quot;Install&quot; ou &quot;Manage
+SSL&quot; 4. Selecione &quot;Let's Encrypt&quot; 5. Marque:
+&quot;Automatically use the new certificate when it is due for
+renewal&quot; 6. Clique &quot;Install&quot; Processo: ✓ Certificado
+é emitido em 5-10 minutos ✓ Renovação automática a cada 90 dias
+(sem ação necessária) ✓ Browser exibirá cadeado 🔒 na barra
+de endereço Verificação: 1. Acesse https://maxmedicine.com.br 2.
+Clique no cadeado 🔒 3. Verifique se o certificado é válido e
+ativo</p>
+<p style="margin-bottom: 0cm; line-height: 100%">📤 SEÇÃO 3:
+UPLOAD DE ARQUIVOS PARA O SERVIDOR</p>
+<p style="margin-bottom: 0cm; line-height: 100%">3.1 Métodos de
+Upload</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Método 1: File
+Manager (Recomendado para Iniciantes)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Passo a passo: 1.
+Acesse cPanel → File Manager 2. Navegue até &quot;public_html&quot;
+(pasta raiz do site) 3. Clique &quot;Upload&quot; (canto superior
+direito) 4. Selecione seus arquivos: □ index.html □ Pasta /css
+com arquivos CSS □ Pasta /js com arquivos JavaScript □ Pasta
+/images com imagens □ Pasta /pages com páginas de especialidades □
+robots.txt □ sitemap.xml □ .htaccess (se usando Apache) 5. Clique
+&quot;Upload&quot; e aguarde conclusão 6. Será exibida mensagem
+&quot;Upload Complete&quot; Vantagens: ✓ Interface visual, fácil
+de entender ✓ Não requer software adicional ✓ Funciona no
+navegador (qualquer OS) ✓ Seguro (HTTPS automático no cPanel)
+Desvantagens: ✗ Mais lento que FTP para muitos arquivos ✗ Upload
+único de arquivo (não batch)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Método 2: FTP
+(Recomendado para Profissionais)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Software recomendado
+(gratuito): • FileZilla (https://filezilla-project.org) -
+Windows/Mac/Linux • WinSCP (https://winscp.net) - Windows apenas •
+Cyberduck (https://cyberduck.io) - Mac/Windows Processo usando
+FileZilla: 1. Baixar e instalar FileZilla 2. Abrir FileZilla 3. Menu:
+File → Site Manager 4. Clique: &quot;New Site&quot; 5. Configure: □
+Protocol: SFTP - SSH File Transfer Protocol □ Host:
+seu-dominio.locaweb.com.br (ou IP fornecido) □ Port: 22 (padrão
+para SFTP) □ Logon Type: Normal □ User: cpanel_username (do
+cPanel) □ Password: sua-senha-cpanel 6. Clique &quot;Connect&quot;
+Usando o FileZilla: Lado esquerdo (seu computador): └── Navegue
+até pasta /meu-site Lado direito (servidor): └── Navegue até
+/public_html Arraste arquivos do lado esquerdo para direito (ou
+clique direito → Upload) Estrutura final no servidor: /public_html/
+├── index.html ├── css/ ├── js/ ├── images/
+├── pages/ ├── robots.txt ├── sitemap.xml └──
+.htaccess Velocidade: 5-10x mais rápido que File Manager</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Método 3: Git
+Deploy (Para Profissionais)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Se você usa Git
+(repositório GitHub/GitLab): No servidor (via SSH): 1. Acesse
+servidor por SSH 2. Navegue até /public_html 3. Execute: git clone
+seu-repositorio.git . 4. Configure webhooks no GitHub para
+auto-deploy Vantagens: ✓ Automático (push = deploy) ✓ Histórico
+de versões ✓ Fácil reverter mudanças Desvantagens: ✗ Requer
+conhecimento de Git e SSH ✗ Não recomendado para iniciantes</p>
+<p style="margin-bottom: 0cm; line-height: 100%">3.2 Verificação
+Pós-Upload</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Checklist
+pós-upload: 1. **Verificar arquivos no cPanel** ✓ Abra File
+Manager ✓ Navegue até /public_html ✓ Veja se todos os arquivos
+aparecem ✓ Verifique tamanho (deve corresponder aos locais) 2.
+**Testar acesso via navegador** ✓ Acesse https://maxmedicine.com.br
+✓ Verifique se homepage carrega ✓ Teste links de navegação ✓
+Teste botões (WhatsApp, telefone) 3. **Verificar permissões de
+arquivo** Se encontrar erro &quot;403 Forbidden&quot;: No File
+Manager: - Clique direito em arquivo → Change Permissions - Arquivo
+.html/.css/.js: 644 - Pastas: 755 - Arquivo .htaccess: 644 4.
+**Testar responsividade** ✓ Teste em desktop (1920x1080) ✓ Teste
+em tablet (768x1024) ✓ Teste em mobile (375x667) 5. **Validar
+HTTPS** ✓ Acesse https://maxmedicine.com.br ✓ Clique no cadeado
+🔒 na barra ✓ Verifique se certificado é válido ✓ Não deve
+haver aviso de segurança</p>
+<p style="margin-bottom: 0cm; line-height: 100%">🌐 SEÇÃO 4:
+CONFIGURAÇÃO DE DNS</p>
+<p style="margin-bottom: 0cm; line-height: 100%">4.1 O Que É DNS?</p>
+<p style="margin-bottom: 0cm; line-height: 100%">DNS (Domain Name
+System) = &quot;Guia de endereços&quot; da internet Funciona assim:
+1. Você digita: maxmedicine.com.br 2. Navegador consulta DNS 3. DNS
+responde: &quot;IP do servidor é 123.45.67.89&quot; 4. Navegador
+acessa: 123.45.67.89 5. Você vê: seu site Configuração necessária
+para: ✓ Domínio apontar para servidor correto ✓ Email funcionar
+corretamente ✓ Certificado SSL validar</p>
+<p style="margin-bottom: 0cm; line-height: 100%">4.2 Configuração
+de DNS (Transferência Locaweb)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Passo 1: Obter
+Servidores DNS da Locaweb</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Após contratar
+hospedagem na Locaweb, você receberá: Email de boas-vindas com: ├──
+Nameservers (servidores DNS): │ ├── ns1.locaweb.com.br │
+├── ns2.locaweb.com.br │ └── ns3.locaweb.com.br │ ├──
+IP do servidor: │ └── 123.45.67.89 (exemplo) │ └──
+Zona DNS para gerenciar manualmente (se necessário) Anotar esses
+dados: □ Nameserver 1: ns1.locaweb.com.br □ Nameserver 2:
+ns2.locaweb.com.br □ Nameserver 3: ns3.locaweb.com.br □ IP do
+servidor: [será fornecido]</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Passo 2: Atualizar
+DNS em registro.br</p>
+<p style="margin-bottom: 0cm; line-height: 100%">1. Acesse
+www.registro.br 2. Faça login com: □ Usuário: ACESSO ROSFR164 □
+Senha: RdSF&amp;0803 3. Clique em &quot;Meus Domínios&quot; 4.
+Selecione &quot;maxmedicine.com.br&quot; 5. Vá para &quot;Configuração
+técnica&quot; Procure por &quot;Servidores de Nomes&quot;: Substitua
+por servidores da Locaweb: □ Primário: ns1.locaweb.com.br □
+Secundário: ns2.locaweb.com.br □ Terciário: ns3.locaweb.com.br
+Clique &quot;Salvar&quot; Mensagem confirmará: &quot;Servidores de
+nomes alterados com sucesso&quot; Aguarde: - Propagação: 0-48 horas
+- Geralmente: 1-4 horas - Testar: https://dnschecker.org</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Passo 3: Verificar
+Propagação DNS</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Ferramenta: DNS
+Checker (https://dnschecker.org) 1. Acesse https://dnschecker.org 2.
+Digite: maxmedicine.com.br 3. Selecione tipo: A (endereço IP) 4.
+Veja resultado: Resultado esperado: ✓ Todos os locais mostram:
+123.45.67.89 (IP da Locaweb) ✓ Todos verdes (propagado) ✓ Se
+alguns vermelhos, espere mais tempo Para verificar email (MX
+records): 1. Acesse DNS Checker novamente 2. Digite:
+maxmedicine.com.br 3. Selecione tipo: MX 4. Resultado esperado: MX
+10: mail.locaweb.com.br ou similar (depende do provedor)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">4.3 Caso Especial:
+DNS Apontamento Manual</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Se você não puder
+mudar nameservers (domínio em outro registrador):</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">No registro.br: 1.
+Vá para &quot;Configuração técnica&quot; → &quot;Apontamentos
+diretos&quot; 2. Adicione registros tipo A: Nome: @ (raiz) IP:
+123.45.67.89 Nome: www IP: 123.45.67.89 3. Para email (MX): Nome: @
+Tipo: MX Prioridade: 10 Valor: mail.locaweb.com.br 4. Salve e aguarde
+propagação (4-48 horas)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">✅ SEÇÃO 5:
+TESTES PÓS-PUBLICAÇÃO</p>
+<p style="margin-bottom: 0cm; line-height: 100%">5.1 Testes
+Funcionais Completos</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Teste 1:
+Carregamento e Acessibilidade</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Desktop (Chrome,
+Firefox, Safari, Edge): 1. Acesse https://maxmedicine.com.br ✓
+Página carrega completamente ✓ Sem erros na console (F12 →
+Console) ✓ Sem avisos de segurança ✓ Cadeado 🔒 presente na
+barra 2. Aguarde carregamento completo (máximo 3-4 segundos) ✓
+Imagens aparecem ✓ Texto é legível ✓ Layout está correto (não
+está quebrado) 3. Teste www redirect ✓ Acesse
+https://www.maxmedicine.com.br ✓ Deve redirecionar para
+https://maxmedicine.com.br ✓ Sem aumentar o tempo de carregamento
+Mobile (iPhone, Android): 1. Acesse https://maxmedicine.com.br ✓
+Sem scroll horizontal indesejado ✓ Menu se adapta ao tamanho da
+tela ✓ Botões têm tamanho clicável ✓ Texto é legível (sem
+zoom) 2. Teste orientação (paisagem ↔ retrato) ✓ Layout se
+adapta suavemente ✓ Sem &quot;esticamento&quot; de elementos</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Teste 2: Links e
+Navegação</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Teste todos os
+links: Menu principal: [ ] Home → carrega
+https://maxmedicine.com.br [ ] Especialidades → exibe menu dropdown
+[ ] Ginecologia → https://maxmedicine.com.br/pages/ginecologia.html
+[ ] Obstetrícia → https://maxmedicine.com.br/pages/obstetrica.html
+[ ] Geriatria → https://maxmedicine.com.br/pages/geriatria.html [ ]
+Urgência → https://maxmedicine.com.br/pages/urgencia.html [ ] UTI
+→ https://maxmedicine.com.br/pages/uti.html [ ] Clínica Médica →
+https://maxmedicine.com.br/pages/clinica-medica.html [ ] Ultrassom →
+https://maxmedicine.com.br/pages/ultrassom.html [ ] Sobre →
+https://maxmedicine.com.br/pages/sobre.html [ ] Contato →
+https://maxmedicine.com.br/pages/contato.html Rodapé: [ ] Links
+sociais (se houver) → abrem em nova aba [ ] Política de
+Privacidade →
+https://maxmedicine.com.br/pages/politica-privacidade.html [ ] Termos
+de Uso → https://maxmedicine.com.br/pages/termos-uso.html Botões
+CTA (Call-to-Action): [ ] Todos os botões &quot;Agende Consulta&quot;
+funcionam [ ] Todos levam à página de contato [ ] Redirecionam
+corretamente sem erros 404</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Teste 3:
+Funcionalidades Interativas</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Formulário de
+Contato: 1. Preencha com dados teste: □ Nome: Teste Silva □
+Email: teste@example.com □ Telefone: (31) 99999-9999 □
+Especialidade: Ginecologia □ Mensagem: Teste de formulário 2.
+Clique em &quot;Enviar&quot; ✓ Mensagem de sucesso aparece ✓
+Email é recebido em seu inbox ✓ Dados chegam corretamente
+formatados Se não receber email: → Verifique spam/lixo eletrônico
+→ Verifique se email está configurado em cPanel → Teste envio de
+email direto do cPanel (File Manager → Email Test) WhatsApp Link:
+1. Clique em botão WhatsApp ✓ Em desktop: abre
+https://wa.me/5531998890803 ✓ Em mobile: abre aplicativo WhatsApp ✓
+Conversa predefinida aparece (se configurada) Teste mensagem padrão:
+✓ Se clicar, texto sugerido aparece ✓ Número está correto: (31)
+99889-0803 Telefone Link: 1. Em mobile: Clique em número de telefone
+✓ Aplicativo de chamada se abre ✓ Número correto é discado 2.
+Em desktop: Clique em número ✓ Pode abrir Skype ou similar
+(depende do navegador) ✓ Número está formatado corretamente</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Teste 4: Performance
+e Velocidade</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Google PageSpeed
+Insights: 1. Acesse https://pagespeedinsights.web.dev/ 2. Digite:
+https://maxmedicine.com.br 3. Clique em &quot;Analisar&quot; 4.
+Aguarde resultado (2-3 minutos) Resultado esperado: ├──
+Desktop: │ ├── Performance: ≥ 60 (ideal ≥ 75) │ ├──
+LCP: ≤ 2.5s │ ├── FID: ≤ 100ms │ └── CLS: ≤ 0.1
+│ └── Mobile: ├── Performance: ≥ 60 (ideal ≥ 75)
+├── Oportunidades de melhoria └── Diagnósticos Se
+performance &lt; 50: 1. Comprima mais imagens (tinypng.com) 2.
+Minifique CSS/JS 3. Reduza tamanho geral do site 4. Ative compressão
+GZIP no .htaccess 5. Use cache do navegador 6. Considere CDN (para
+futuro)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Teste 5: Segurança</p>
+<p style="margin-bottom: 0cm; line-height: 100%">SSL Labs SSL Test:
+1. Acesse https://www.ssllabs.com/ssltest/ 2. Digite:
+maxmedicine.com.br 3. Clique &quot;Submit&quot; 4. Aguarde resultado
+Resultado esperado: ✓ Grade: A ou A+ (no mínimo B) ✓
+Certificate: Válido (Let's Encrypt) ✓ Chain: Completo e correto ✓
+Sem avisos de segurança críticos Security Headers
+(https://securityheaders.com): 1. Acesse https://securityheaders.com
+2. Digite: https://maxmedicine.com.br 3. Clique em &quot;Scan&quot;
+Resultado esperado: ✓ X-Content-Type-Options: nosniff ✓
+X-Frame-Options: SAMEORIGIN ou DENY ✓ Referrer-Policy: Present ✓
+Grade: Mínimo C (ideal A) Se score baixo, adicione ao .htaccess:</p>
+<p style="margin-bottom: 0cm; line-height: 100%">apache</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"># Security Headers</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Header set
+X-Content-Type-Options &quot;nosniff&quot;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Header set
+X-Frame-Options &quot;SAMEORIGIN&quot;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Header set
+X-XSS-Protection &quot;1; mode=block&quot;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Header set
+Referrer-Policy &quot;no-referrer-when-downgrade&quot;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Header set
+Permissions-Policy &quot;geolocation=(), microphone=(), camera=()&quot;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">5.2 Teste de
+Compatibilidade de Navegadores</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Navegadores a
+testar: Desktop: ✓ Chrome (versão atual) ✓ Firefox (versão
+atual) ✓ Safari (se Mac) ✓ Edge (versão atual) Mobile: ✓
+Chrome (Android) ✓ Safari (iOS) ✓ Firefox (Android) Ferramenta
+online: BrowserStack (https://www.browserstack.com) → Teste em
+centenas de navegadores/dispositivos → Plano gratuito disponível
+Checklist de compatibilidade: ✓ Layout se exibe corretamente em
+todos ✓ Funcionalidades funcionam (forms, links) ✓ Sem erro
+JavaScript ✓ Sem erro de CSS ✓ Imagens carregam ✓ Fontes exibem
+corretamente</p>
+<p style="margin-bottom: 0cm; line-height: 100%">5.3 Teste de SEO
+Básico</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Google Search
+Console: 1. Acesse https://search.google.com/search-console 2. Clique
+&quot;Propriedade&quot; → &quot;URL prefix&quot; 3. Digite:
+https://maxmedicine.com.br 4. Clique &quot;Continuar&quot; 5. Siga
+instruções de verificação (adicionar DNS ou arquivo) Após
+verificado: ✓ Submeta sitemap: /sitemap.xml ✓ Monitore erros de
+indexação ✓ Analise palavras-chave Teste de Palavras-chave: Use
+MozBar (extensão Chrome): https://moz.com/tools/mozbar 1. Instale
+extensão 2. Acesse seu site 3. Veja: □ Page Authority □ Domain
+Authority □ Keywords presentes Verificação de SEO Técnico:
+Ferramenta: Screaming Frog (versão gratuita) 1. Baixe:
+https://www.screamingfrog.co.uk/seo-spider/ 2. Abra aplicativo 3.
+Cole URL: https://maxmedicine.com.br 4. Clique &quot;Start&quot; para
+rastrear Procure por: ✓ Títulos (&lt;title&gt;): Todos
+preenchidos? ✓ Meta descriptions: Todos preenchidos? ✓ H1: Uma
+por página? ✓ Links quebrados: Nenhum? ✓ Redirecionamentos:
+Corretos?</p>
+<p style="margin-bottom: 0cm; line-height: 100%">🎨 SEÇÃO 6:
+APARÊNCIA E FUNCIONALIDADES APÓS PUBLICAÇÃO</p>
+<p style="margin-bottom: 0cm; line-height: 100%">6.1 Homepage ao Vivo
+- Estrutura Visual</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Aqui está como sua
+homepage ficará após publicação:</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">┌─────────────────────────────────────────────────────────────────┐
+│ CLÍNICA MAX MEDICINA MULTIPROFISSIONAL ☎️ (31) 99889-0803 │
+│ maxmedicine.com.br │ │ │ │ [LOGO] | Home | Especialidades
+▼ | Sobre | Contato │
+└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ [BANNER HERO - GRANDE] │ │ │ │ &quot;Cuidado Integral em
+Saúde com Excelência e Humanização&quot; │ │ │ │ [FOTO:
+Consultório ou médico profissional de alta qualidade] │ │ │ │
+&quot;Há mais de 40 anos dedicados à medicina...&quot; │ │ │
+│ [Botão: AGENDE SUA CONSULTA] │
+└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ BEM-VINDO À CLÍNICA MAX │ │ │ │ Na Clínica Max,
+acreditamos que cada paciente merece atenção │ │ personalizada,
+diagnóstico preciso e tratamento humanizado. │ │ Com mais de
+quatro décadas de experiência... │ │ │ │ [Botão: Conheça
+Mais] │
+└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ NOSSAS ESPECIALIDADES MÉDICAS │ │ │ │ ┌──────────────┐
+┌──────────────┐ ┌──────────────┐
+│ │ │ IMAGEM │ │ IMAGEM │ │ IMAGEM │ │ │ │
+Ginecologia │ │ Obstetrícia │ │ Geriatria │ │ │ │
+Cuidado... │ │ Acompanhamen │ │ Atenção... │ │ │ │
+[Saiba Mais] │ │ [Saiba Mais] │ │ [Saiba Mais] │ │ │
+└──────────────┘ └──────────────┘
+└──────────────┘ │ │ │ │
+┌──────────────┐ ┌──────────────┐
+┌──────────────┐ │ │ │ IMAGEM │
+│ IMAGEM │ │ IMAGEM │ │ │ │ Urgência │ │ UTI │ │
+Clínica Med. │ │ │ │ Atendimento..│ │ Especializ...│ │
+Atendimento. │ │ │ │ [Saiba Mais] │ │ [Saiba Mais] │ │
+[Saiba Mais] │ │ │ └──────────────┘
+└──────────────┘ └──────────────┘
+│ │ │ │ ┌──────────────┐ │
+│ │ IMAGEM │ │ │ │ Ultrassom │ │ │ │ Exames de │
+│ │ │ [Saiba Mais] │ │ │ └──────────────┘
+│
+└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ POR QUE ESCOLHER A CLÍNICA MAX? │ │ │ │ ✓ Experiência
+de 45 Anos │ │ Formação sólida e trajetória consolidada em
+medicina... │ │ │ │ ✓ Atendimento Humanizado │ │ Cada
+paciente é único. Praticamos escuta ativa... │ │ │ │ ✓
+Tecnologia Avançada │ │ Equipamentos modernos de
+ultrassonografia... │ │ │ │ ✓ Formação Multiprofissional
+│ │ Mestrado em Terapia Intensiva... │ │ │ │ ✓ Cuidado
+Integral │ │ Visão holística do paciente: corpo, mente e
+espírito. │ │ │ │ ✓ Compromisso com a Vida │ │ Guiados
+por princípios éticos cristãos... │
+└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ CONHEÇA O DR. RONEL FRANCISCO │ │ │ │ [FOTO DO DR.
+RONEL] │ │ │ │ Médico formado há 45 anos pela Escola de
+Medicina da │ │ Fundação Oswaldo Aranha, o Dr. Ronel Francisco
+construiu │ │ uma carreira dedicada ao cuidado integral da saúde
+humana. │ │ │ │ Com formação em Clínica Médica,
+Ginecologia, Obstetrícia, │ │ Geriatria e Gerontologia, e
+Mestrado em Terapia Intensiva │ │ e Medicina de Urgência,
+acumula experiência de 20 anos no │ │ interior da Bahia e 10
+anos na capital... │ │ │ │ &quot;A medicina é minha vocação,
+o cuidado é minha missão, │ │ e a cura vem de Deus.&quot; │ │
+│ │ [Botão: Conheça Mais Sobre Nossa História] │
+└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ PRONTO PARA CUIDAR DA SUA SAÚDE? │ │ │ │ Agende sua
+consulta agora mesmo e experimente o atendimento │ │ que une
+experiência, tecnologia e humanização. │ │ │ │ 📞 (31)
+99889-0803 │ │ 📍 [Endereço da clínica] │ │ 🕒 Segunda
+a Sexta: [Horário] | Sábado: [Horário] │ │ │ │ [Botão:
+Ligar Agora] [Botão: Falar no WhatsApp] │
+└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ RODAPÉ │ │ │ │ Clínica Max Medicina Multiprofissional │
+│ Cuidado integral em saúde com excelência e humanização. │ │
+│ │ CONTATO: ESPECIALIDADES: │ │ 📞 (31) 99889-0803 •
+Ginecologia │ │ 📧 [email] • Obstetrícia │ │ 📍
+[endereço completo] • Geriatria │ │ • Medicina de Urgência
+│ │ INFORMAÇÕES LEGAIS: • Terapia Intensiva │ │ [Política
+de Privacidade] • Clínica Médica │ │ [Termos de Uso] •
+Ultrassonografia │ │ [LGPD] │ │ │ │ © 2025 Clínica Max.
+Todos os direitos reservados. │ │ │ │ &quot;E disse-lhes: Ide
+por todo o mundo... e estes sinais │ │ seguirão aos que crerem.&quot;
+- Marcos 16:15,18 │
+└─────────────────────────────────────────────────────────────────┘</p>
+<p style="margin-bottom: 0cm; line-height: 100%">6.2 Página de
+Especialidade ao Vivo (Exemplo: Ginecologia)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">┌─────────────────────────────────────────────────────────────────┐
+│ CLÍNICA MAX MEDICINA MULTIPROFISSIONAL ☎️ (31) 99889-0803 │
+│ maxmedicine.com.br │ │ │ │ [LOGO] | Home | Especialidades
+▼ | Sobre | Contato │
+└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ Ginecologia - Cuidado Especializado da Saúde da Mulher │ │
+[Imagem: Consultório feminino acolhedor] │
+└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ INTRODUÇÃO │ │ │ │ A ginecologia é a especialidade
+médica dedicada à saúde │ │ reprodutiva, hormonal e urogenital
+da mulher em todas as │ │ fases da vida — da adolescência à
+menopausa... │
+└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ QUANDO PROCURAR UM GINECOLOGISTA? │ │ │ │ ✓ Check-up
+anual preventivo │ │ ✓ Menstruação irregular │ │ ✓ Dor
+pélvica ou abdominal │ │ ✓ Corrimento vaginal anormal │ │
+✓ Planejamento familiar │ │ ✓ Climatério e menopausa │ │
+✓ Prevenção de câncer │ │ ✓ Infecções ginecológicas │
+│ ✓ Miomas e cistos │
+└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ PRINCIPAIS CONDIÇÕES TRATADAS │ │ │ │ Endometriose |
+Miomas Uterinos | SOP | Infecções │ │ Incontinência Urinária
+| Distúrbios Menstruais │ │ Climatério e Menopausa | Prevenção
+de Câncer Ginecológico │
+└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ PROCEDIMENTOS E EXAMES OFERECIDOS │ │ │ │ ✓ Consulta
+ginecológica completa │ │ ✓ Exame preventivo (Papanicolau) │
+│ ✓ Ultrassonografia ginecológica │ │ ✓ Colposcopia │ │
+✓ Inserção de DIU │ │ ✓ Orientação contraceptiva │ │
+✓ Avaliação hormonal │ │ ✓ Acompanhamento de climatério │
+└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ POR QUE ESCOLHER NOSSA GINECOLOGIA? │ │ │ │ •
+Experiência Consolidada │ │ • Ultrassom no Consultório │ │
+• Atendimento Humanizado │ │ • Visão Integral da Saúde
+Feminina │ │ • Procedimentos Especializados │
+└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ PREVENÇÃO É O MELHOR REMÉDIO │ │ │ │ A consulta
+ginecológica anual é essencial para: │ │ │ │ • Detectar
+precocemente câncer de colo de útero, ovário │ │ • Prevenir
+infecções │ │ • Acompanhar saúde hormonal e reprodutiva │
+│ • Orientar sobre planejamento familiar │ │ • Promover
+qualidade de vida em todas as idades │ │ │ │ Não espere
+sintomas aparecerem. Cuide-se preventivamente. │
+└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ AGENDE SUA CONSULTA │ │ │ │ Cuide da sua saúde
+ginecológica com quem entende e respeita. │ │ │ │ 📞 (31)
+99889-0803 │ │ │ │ [Botão: Agendar Consulta] [Botão: Falar
+no WhatsApp] │
+└─────────────────────────────────────────────────────────────────┘
+[RODAPÉ - Similar à homepage]</p>
+<p style="margin-bottom: 0cm; line-height: 100%">6.3 Funcionalidades
+Esperadas</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Botão WhatsApp
+Flutuante</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Localização: Canto
+inferior direito da página Ícone: Logo do WhatsApp (verde)
+Comportamento: ├── Desktop (ao passar mouse): │ ├──
+Amplia levemente │ └── Exibe tooltip: &quot;Converse com a
+gente no WhatsApp&quot; │ ├── Mobile: │ ├── Visível
+mas não atrapalha conteúdo │ ├── Sempre flutuante (mesmo ao
+scroll) │ └── Ao clicar: abre conversa predefinida │ └──
+Link:
+https://wa.me/5531998890803?text=Olá%20gostaria%20de%20agendar%20uma%20consulta
+Mensagem sugerida ao clicar: &quot;Olá! Gostaria de agendar uma
+consulta na Clínica Max.&quot;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Menu Responsivo</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Desktop (1200px+):
+┌────────────────────────────────────────┐
+│ [LOGO] Home | Especialidades | Sobre │
+└────────────────────────────────────────┘
+Especialidades com dropdown: ┌─────────────────────┐
+│ Especialidades ▼ │ ├─────────────────────┤
+│ Ginecologia │ │ Obstetrícia │ │ Geriatria │ │
+Urgência │ │ UTI │ │ Clínica Médica │ │
+Ultrassonografia │ └─────────────────────┘
+Mobile (até 768px): ┌────────────────────────┐
+│ [LOGO] [☰ Menu] │ └────────────────────────┘
+Menu hamburguês (ao clicar ☰): ┌──────────────────────┐
+│ × (fechar) │ ├──────────────────────┤
+│ Home │ │ Especialidades │ │ ↳ Ginecologia │ │ ↳
+Obstetrícia │ │ ↳ [etc...] │ │ Sobre │ │ Contato │
+└──────────────────────┘</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Formulário de
+Contato Funcional</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Campo: Nome ├──
+Tipo: Text ├── Placeholder: &quot;Seu nome completo&quot; ├──
+Validação: Obrigatório, mín. 3 caracteres └── Exibe erro se
+vazio: &quot;Nome é obrigatório&quot; Campo: Email ├── Tipo:
+Email ├── Placeholder: &quot;seu-email@example.com&quot; ├──
+Validação: Obrigatório, formato válido └── Exibe erro se
+inválido: &quot;Email inválido&quot; Campo: Telefone ├──
+Tipo: Tel ├── Placeholder: &quot;(31) 99999-9999&quot; ├──
+Validação: Obrigatório, 11+ dígitos └── Exibe erro se
+inválido: &quot;Telefone inválido&quot; Campo: Especialidade ├──
+Tipo: Select (dropdown) ├── Opções: │ ├── Selecione
+uma especialidade │ ├── Ginecologia │ ├── Obstetrícia
+│ ├── Geriatria │ ├── [etc...] └── Validação:
+Obrigatório Campo: Mensagem ├── Tipo: Textarea ├──
+Placeholder: &quot;Descreva sua necessidade...&quot; ├──
+Validação: Obrigatório, mín. 10 caracteres └── Exibe erro
+se muito curto: &quot;Mensagem muito curta&quot; Comportamento ao
+enviar: 1. Valida todos os campos 2. Se algum campo vazio → exibe
+mensagens de erro 3. Se todos válidos → envia para backend/email
+4. Exibe mensagem: &quot;Enviado com sucesso! Responderemos em
+breve.&quot; 5. Limpa formulário 6. Email chega em:
+contato@maxmedicine.com.br</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Links de Telefone e
+WhatsApp</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Telefone Link: HTML:
+&lt;a href=&quot;tel:+5531998890803&quot;&gt;(31) 99889-0803&lt;/a&gt;
+Comportamento: ├── Desktop: │ └── Pode chamar via
+Skype/Google Meet (se instalado) │ └── Mobile: └── Abre
+app de chamadas com número discado WhatsApp Link: HTML: &lt;a
+href=&quot;https://wa.me/5531998890803?text=...&quot;&gt;WhatsApp&lt;/a&gt;
+Comportamento: ├── Desktop: │ └── Abre WhatsApp Web │
+└── Mobile: └── Abre app WhatsApp nativo</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Imagens Responsivas</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Código HTML:
+&lt;picture&gt; &lt;source media=&quot;(max-width: 600px)&quot;
+srcset=&quot;images/banner-mobile.jpg&quot;&gt; &lt;source
+media=&quot;(max-width: 1200px)&quot;
+srcset=&quot;images/banner-tablet.jpg&quot;&gt; &lt;img
+src=&quot;images/banner-desktop.jpg&quot; alt=&quot;Banner principal
+da clínica&quot;&gt; &lt;/picture&gt; Comportamento: ├──
+Mobile (&lt; 600px): │ └── Carrega banner-mobile.jpg (menor,
+mais leve) │ ├── Tablet (600-1200px): │ └── Carrega
+banner-tablet.jpg (médio) │ └── Desktop (&gt; 1200px): └──
+Carrega banner-desktop.jpg (grande, alta qualidade)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">6.4 Indicadores
+Visuais de Sucesso</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Após publicação,
+você verá:</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">✅ INDICADORES
+VISUAIS ESPERADOS 1. Barra de Endereço: ├── URL:
+https://maxmedicine.com.br ├── Cadeado 🔒: Presente e verde
+├── Certificado: &quot;Let's Encrypt&quot; (ao clicar) └──
+Sem aviso de &quot;site não seguro&quot; 2. Homepage carrega em: ├──
+Desktop: 1-3 segundos ├── Mobile 4G: 2-4 segundos └──
+Mobile 3G: 3-5 segundos 3. Elementos visuais: ├── Logo aparece
+no topo ├── Menu se exibe claramente ├── Banner grande
+com imagem profissional ├── Cards de especialidades com imagens
+├── Texto fluindo com fontes legíveis ├── Cores
+consistentes com sua marca ├── Botões destacados (contraste
+adequado) └── Rodapé com informações de contato 4.
+Interatividade: ├── Hover em botões → cor muda ├──
+Hover em links → sublinha ou muda cor ├── Clique em menu →
+páginas carregam ├── Clique em formulário → campos
+selecionáveis ├── Clique em WhatsApp → app abre └──
+Clique em telefone → chamada é discada (mobile) 5. Responsividade:
+├── Desktop (1920px): Layout em 3+ colunas ├── Tablet
+(768px): Layout em 2 colunas ├── Mobile (375px): Layout em 1
+coluna (vertical) └── Sem scroll horizontal 6. Performance: ├──
+Google PageSpeed: ≥ 60 pontos ├── HTTPS ativo: Sem avisos ├──
+Sem erros no console (F12) ├── Sem imagens quebradas (404) └──
+Sem links quebrados</p>
+<p style="margin-bottom: 0cm; line-height: 100%">🎯 CHECKLIST
+FINAL: SITE PUBLICADO COM SUCESSO</p>
+<p style="margin-bottom: 0cm; line-height: 100%">ANTES DA PUBLICAÇÃO:
+☑ Código validado (HTML, CSS, JS) ☑ Imagens comprimidas e
+otimizadas ☑ Responsividade testada em múltiplos dispositivos ☑
+Links testados ☑ Formulários testados ☑ Performance testada
+(PageSpeed ≥ 60) ☑ Política de privacidade criada ☑ Termos de
+uso criados ☑ Certificado SSL disponível ☑ Estrutura de arquivos
+organizada HOSPEDAGEM: ☑ Provedor contratado (Locaweb, etc.) ☑
+WordPress instalado (se usar) ☑ Plugins essenciais instalados ☑
+Emails profissionais configurados ☑ Certificado SSL ativado ☑
+Backup automático configurado ☑ Firewall ativado (Wordfence ou
+similar) DOMÍNIO: ☑ Nameservers atualizados em registro.br ☑ DNS
+propagado (verificado em dnschecker.org) ☑ Redirecionamento www
+ativo ☑ Certificado SSL válido e ativo APÓS PUBLICAÇÃO: ☑
+Site carrega corretamente ☑ HTTPS funciona sem avisos ☑ Todos os
+links funcionam ☑ Formulários enviam emails corretamente ☑
+WhatsApp link abre conversa ☑ Telefone link disca corretamente ☑
+Imagens carregam sem problemas ☑ Menu responsivo funciona ☑
+Performance está boa (testado novamente) ☑ Sem erros no console do
+navegador SEO: ☑ Sitemap enviado ao Google Search Console ☑
+Domínio verificado no Search Console ☑ Meta descriptions em todas
+as páginas ☑ Títulos descritivos e com palavras-chave ☑
+Estrutura de headings correta (H1, H2, H3) ☑ Alt text em todas as
+imagens ☑ Links internos estratégicos ☑ robots.txt presente
+SEGURANÇA: ☑ SSL ativo e válido ☑ Headers de segurança
+configurados ☑ Backups automáticos ativados ☑ Firewall ativado ☑
+Plugins/temas atualizados ☑ Senhas fortes em todos os acessos ☑
+Email de contato recebendo mensagens MONITORAMENTO: ☑ Google
+Analytics instalado (opcional, mas recomendado) ☑ Google Search
+Console monitorado ☑ Alertas de uptime configurados ☑ Backup
+testado (tentar restaurar) COMUNICAÇÃO: ☑ Enviar link do site
+para contatos principais ☑ Atualizar redes sociais com link do site
+☑ Compartilhar com equipe de atendimento ☑ Treinar como responder
+conversas WhatsApp ☑ Documentar acesso (logins, senhas) em local
+seguro</p>
+<p style="margin-bottom: 0cm; line-height: 100%">🚨 TROUBLESHOOTING
+- PROBLEMAS COMUNS E SOLUÇÕES</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Erro 404 - Página
+Não Encontrada</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Causa: Arquivo não
+existe no servidor Solução: 1. Verifique se arquivo foi realmente
+enviado (File Manager) 2. Verifique se nome do arquivo é exato
+(maiúsculas/minúsculas importam) 3. Se página é &quot;index.html&quot;,
+verifique se está em /public_html 4. Se link interno, verifique
+caminho: ✓ Correto: href=&quot;/pages/ginecologia.html&quot; ✗
+Errado: href=&quot;pages/ginecologia.html&quot; (sem /) Teste: Acesse
+https://maxmedicine.com.br/pages/ginecologia.html Se retorna 404,
+arquivo não está no servidor</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Erro 403 - Acesso
+Proibido</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Causa: Permissões
+de arquivo incorretas Solução: 1. File Manager → clique direito
+no arquivo 2. Change Permissions 3. Configure: ├── .html, .css,
+.js, .xml, .txt: 644 ├── Pastas: 755 └── .htaccess: 644
+4. Clique &quot;Apply to all&quot; (se mudar pasta)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">HTTPS Não Funciona
+/ Aviso de Segurança</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Causa: Certificado
+SSL não ativado ou inválido Solução: 1. cPanel → SSL/TLS Status
+2. Procure seu domínio 3. Clique &quot;Install&quot; (se não
+instalado) 4. Aguarde 5-10 minutos 5. Acesse
+https://maxmedicine.com.br novamente 6. Se aviso persistir, limpe
+cache do navegador (Ctrl+Shift+Delete) Verificar certificado: 1.
+Acesse https://www.ssllabs.com/ssltest/ 2. Digite domínio 3. Espere
+resultado 4. Se grade &lt; B, contate suporte de hospedagem</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Email não chega</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Causa: Email não
+está configurado ou formulário não envia Solução: 1. Verificar
+se email foi criado: ├── cPanel → Email Accounts └──
+Procure contato@maxmedicine.com.br 2. Testar envio manualmente: ├──
+Webmail: https://seu-dominio.locaweb.com.br/mail ├── Acesse com
+credenciais ├── Envie teste para seu Gmail ├── Verifique
+se chega 3. Se formulário web não envia: ├── Verifique se
+form action aponta para script correto ├── Verifique permissões
+(chmod 755) do script ├── Teste com arquivo PHP simples
+primeiro 4. Verificar spam: ├── Procure em pasta &quot;Spam&quot;
+ou &quot;Lixo&quot; ├── Marque como &quot;Não é spam&quot;
+para futures</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Site lento</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Causa: Imagens
+grandes, código não minificado, ou servidor congestionado Solução:
+1. Comprimir imagens novamente: ├── Acesse tinypng.com ├──
+Comprima mais (qualidade maior = arquivo maior) └── Substitua
+no servidor 2. Minificar código: ├── CSS:
+https://cssminifier.com/ ├── JS: https://www.minifier.org/ └──
+HTML: https://htmlcompressor.com/ 3. Ativar cache do navegador
+(.htaccess): ├── Veja arquivo .htaccess na seção 1.4 └──
+Adicione ao seu arquivo se não tiver 4. Se hospedagem ativou cache:
+├── Limpar cache da hospedagem ├── Aguarde 10-15 minutos
+└── Teste novamente 5. Contactar suporte: └── Se site
+continuarincrevelmente lento, peça ao suporte para: ├──
+Verificar carga do servidor ├── Aumentar recursos (CPU, RAM)
+└── Migrar para servidor melhor (se necessário)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">DNS não resolveu
+ainda</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Causa: Propagação
+de DNS ainda em andamento Solução: 1. Aguardar: ├── Mínimo:
+1-4 horas ├── Máximo: 48 horas └── Geralmente: 8-12
+horas 2. Verificar status: ├── Acesse https://dnschecker.org
+├── Digite: maxmedicine.com.br ├── Tipos a verificar: A,
+MX, NS └── Se todos verdes, está pronto 3. Limpar cache DNS:
+├── Windows: cmd → ipconfig /flushdns ├── Mac: sudo
+dscacheutil -flushcache ├── Linux: sudo systemctl restart
+systemd-resolved └── Navegador: Ctrl+Shift+Delete → cache 4.
+Se após 48h ainda não resolveu: └── Contate suporte (pode
+haver erro na configuração)</p>
+<p style="margin-bottom: 0cm; line-height: 100%">📊 MONITORAMENTO
+CONTÍNUO</p>
+<p style="margin-bottom: 0cm; line-height: 100%">APÓS PUBLICAÇÃO -
+TAREFAS ROTINEIRAS: DIARIAMENTE: ☑ Monitorar formulário de contato
+(responder em &lt; 2 horas) ☑ Responder conversas WhatsApp
+SEMANALMENTE: ☑ Verificar uptime (site está online?) ☑ Verificar
+backup (feito automaticamente?) ☑ Revisar Google Search Console
+(erros?) MENSALMENTE: ☑ Verificar Google Analytics (visitantes,
+comportamento) ☑ Testar todos os links (não ficarem quebrados) ☑
+Revisar performance (PageSpeed) ☑ Verificar segurança (SSL
+válido?, backups OK?) ☑ Atualizar conteúdo (blog, informações)
+TRIMESTRALMENTE: ☑ Revisão de segurança completa ☑ Atualizar
+WordPress/plugins ☑ Revisar cobertura de tópicos ☑ Coletar
+feedback de usuários</p>
+<p style="margin-bottom: 0cm; line-height: 100%">🎯 RESUMO - DO
+DESENVOLVIMENTO AO LANÇAMENTO</p>
+<p style="margin-bottom: 0cm; line-height: 100%">FASE 1: PREPARAÇÃO
+(1-2 dias) │ ├─ Validar código (HTML, CSS, JS) ├─ Otimizar
+imagens ├─ Testar responsividade ├─ Testar funcionalidades ├─
+Criar política de privacidade └─ Organizar arquivos FASE 2:
+HOSPEDAGEM (1-2 horas) │ ├─ Contratar provedor (Locaweb, etc.)
+├─ Domínio: transferência ou apontamento ├─ Certificado
+SSL: ativar ├─ Email profissional: criar └─ cPanel:
+configurar FASE 3: UPLOAD (30 minutos a 1 hora) │ ├─ Conectar
+via FTP ou File Manager ├─ Enviar todos os arquivos ├─
+Verificar upload completo └─ Testar acesso inicial FASE 4: DNS
+(1-48 horas) │ ├─ Atualizar nameservers em registro.br ├─
+Aguardar propagação ├─ Verificar com dnschecker.org └─
+Confirmar que domínio resolve FASE 5: TESTES FINAIS (2-3 horas) │
+├─ Teste funcional completo ├─ Teste de links e navegação
+├─ Teste de formulários ├─ Teste de performance ├─ Teste
+de segurança └─ Teste de compatibilidade FASE 6: OTIMIZAÇÃO
+(1-2 horas) │ ├─ Enviar sitemap ao Google ├─ Configurar
+Search Console ├─ Ativar Analytics (opcional) ├─ Configurar
+alertas de uptime └─ Documentar acesso FASE 7: LANÇAMENTO
+(Anunciar) │ ├─ Enviar link para contatos ├─ Compartilhar
+em redes sociais ├─ Informar à equipe de atendimento ├─
+Coletar feedback └─ Monitorar primeiros dias TOTAL DE TEMPO: 3-5
+dias (Sendo 2-3 dias esperando DNS propagar)</p>
+</body>
+</html>
